@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand"></a>
+    <form class="d-flex">
+      <ng-container *ngIf="(currentUser$ | async) === null">
+        <button routerLink="/login" class="btn btn-primary" type="submit">Login</button>
+      </ng-container>
+      <ng-container *ngIf="(currentUser$ | async)">
+        <button (click)="logOut()" class="btn btn-primary mx-3" type="submit">Logout</button>
+        <a class="my-2" href="">Welcome {{(currentUser$ | async).displayName}}</a>
+      </ng-container>
+    </form>
+  </div>
+</nav>

@@ -1,0 +1,4 @@
+<p>{{subject.name}}</p>
+<p *ngFor="let item of students">
+    <app-lecturer-student-view [student]="item" [subject]="subject"></app-lecturer-student-view>
+</p>

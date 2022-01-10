@@ -1,0 +1,16 @@
+<ng-container *ngIf="subject">
+  <h4 class="list-group-item-heading">{{subject.name}}, id: {{subject.id}}</h4>
+  <!-- <button (click)="getAssignedLecturers(item.id)" class="btn-primary mr-5">Edit</button> -->
+  <button (click)="deleteSubject(subject.id)" class="btn-danger mx-4">Delete</button>
+  
+  <div *ngFor="let item of assignedLecturers" href="#" class="list-group-item">
+    <h4 class="list-group-item-heading">{{item.firstName}} {{item.lastName}}</h4>
+    <!-- <button class="btn-primary mr-5">Edit</button> -->
+    <button (click)="deleteAssignation(item.id)" class="btn-info mx-4">Remove</button>
+  </div>
+  
+  <div class="navbar-left navbar-form form-group mt-2" style="width: 200px;">
+      <input type="text" style="width: 200px ;" class="form-control" placeholder="New Lecturer id" [(ngModel)]="newAssignationLecturerId">
+  </div>
+  <button (click)="addAssignation()" style="width: 200px ;" type="submit" class="btn btn-primary mt-1">Add new lecturer</button>
+</ng-container>

@@ -1,0 +1,51 @@
+<div class="container mt-5" *ngIf="authorized">
+    <h2>Admin menu</h2>
+    <h3 class="mt-5">All Subjects:</h3>
+    <div class="list-group mt-2">
+        <div *ngFor="let item of subjects" href="#" class="list-group-item">
+            <app-subject-view [subject]="item"></app-subject-view>
+        </div>
+    </div>
+    <div class="navbar-left navbar-form form-group mt-2" style="width: 200px;">
+        <input type="text" style="width: 200px ;" class="form-control" placeholder="New Subject Name" [(ngModel)]="newSubjectName">
+    </div>
+    <button (click)="addSubject()" style="width: 200px ;" type="submit" class="btn btn-primary mt-1">Create New Subject</button>
+
+    <h3 class="mt-5">All Students:</h3>
+    <div class="list-group mt-2">
+        <div *ngFor="let item of students" href="#" class="list-group-item">
+          <h4 class="list-group-item-heading">{{item.firstName}} {{item.lastName}}, id: {{item.id}}</h4>
+          <button (click)="deleteStudent(item.id)"  class="btn-danger mx-4">Delete</button>
+        </div>
+    </div>
+    <div class="navbar-left navbar-form form-group mt-2" style="width: 200px;">
+        <input type="text" style="width: 200px ;" class="form-control my-1" placeholder="Username" [(ngModel)]="newUserUsername">
+        <input type="text" value="adfaf" style="width: 200px ;" class="form-control my-1" placeholder="Password" [(ngModel)]="newUserPassword">Pa$$w0rd
+        <input type="text" style="width: 200px ;" class="form-control my-1" placeholder="First Name" [(ngModel)]="newUserFirstName">
+        <input type="text" style="width: 200px ;" class="form-control my-1" placeholder="Last Name" [(ngModel)]="newUserLastName">
+    </div>
+    <button (click)="addStudent()" style="width: 200px ;" type="submit" class="btn btn-primary mt-1">Create New Student</button>
+
+    <h3 class="mt-5">All Lecturers:</h3>
+    <div class="list-group mt-2">
+        <div *ngFor="let item of lecturers" href="#" class="list-group-item">
+          <h4 class="list-group-item-heading">{{item.firstName}} {{item.lastName}}, id: {{item.id}}</h4>
+          <button (click)="deleteLecturer(item.id)"  class="btn-danger mx-4">Delete</button>
+        </div>
+    </div>
+    <div class="navbar-left navbar-form form-group mt-2" style="width: 200px;">
+        <input type="text" style="width: 200px ;" class="form-control my-1" placeholder="Username" [(ngModel)]="newUserUsername">
+        <input type="text" value="adfaf" style="width: 200px ;" class="form-control my-1" placeholder="Password" [(ngModel)]="newUserPassword">Pa$$w0rd
+        <input type="text" style="width: 200px ;" class="form-control my-1" placeholder="First Name" [(ngModel)]="newUserFirstName">
+        <input type="text" style="width: 200px ;" class="form-control my-1" placeholder="Last Name" [(ngModel)]="newUserLastName">
+    </div>
+    <button (click)="addLecturer()" style="width: 200px ;" type="submit" class="btn btn-primary mt-1">Create New Lecturer</button>
+    
+
+    <h3 class="mt-5">All Groups:</h3>
+    <div class="list-group mt-2">
+        <div *ngFor="let item of groups" href="#" class="list-group-item">
+            <app-group-view [group]="item"></app-group-view>
+        </div>
+    </div>
+</div>

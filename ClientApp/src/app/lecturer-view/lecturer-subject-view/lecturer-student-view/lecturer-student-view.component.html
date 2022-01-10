@@ -1,0 +1,9 @@
+<ng-container *ngIf="grade">
+    <div class="container d-flex">
+        <p class="my-4">{{student.firstName}} {{student.lastName}}, Grade: <p class="my-4" *ngIf="grade.value == -1">No grade</p>
+        <p class="my-4" *ngIf="grade.value != -1">{{grade.value}}</p>
+        <input type="username" class="form-control my-4 mx-2" style="height: 30px; width: 50px;" [(ngModel)]="newGrade">
+        <button (click)="setGrade()" class="btn-primary mx-3 my-3">Set Grade</button>
+    </div>
+    
+</ng-container>
